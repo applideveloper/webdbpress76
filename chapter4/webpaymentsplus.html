@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h2>WEB+DB PRESSの購入</h2>
+  <h4>価格: 1,554円</h4>
+  <iframe name='hss_iframe' style='width:590px;height:560px;border:none;overflow:hidden;'></iframe>
+  <form action='https://securepayments.sandbox.paypal.com/cgi-bin/acquiringweb' method='post' name='form_iframe' style='display:none' target='hss_iframe'>
+    <input name='cmd' type='hidden' value='_hosted-payment'>
+    <input name='subtotal' type='hidden' value='1554'>
+    <input name='business' type='hidden' value='P8HNLXUB3DRQA'>
+    <input name='lc' type='hidden' value='jp'>
+    <input name='paymentaction' type='hidden' value='sale'>
+    <input name='template' type='hidden' value='templateD'>
+    <input name='billing_address1' type='hidden' value='永田町1-7-1'>
+    <input name='billing_city' type='hidden' value='東京都'>
+    <input name='billing_state' type='hidden' value='日本'>
+    <input name='billing_zip' type='hidden' value='100-0014'>
+    <input name='billing_country' type='hidden' value='JP'>
+    <input name='billing_first_name' type='hidden' value='Kei'>
+    <input name='billing_last_name' type='hidden' value='Kubo'>
+    <input name='return' type='hidden' value='https://www.example.com/confirm.html'>
+  </form>
+  <script>
+    //<![CDATA[
+      document.form_iframe.submit();
+    //]]>
+  </script>
+</body>
+</html>
