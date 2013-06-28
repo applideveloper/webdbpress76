@@ -1,0 +1,68 @@
+.hero-unit
+  %h3
+    カード情報に対してChargeを作成する
+  %pre
+    %code
+      :preserve
+        Stripe::Charge.create(
+          amount: 1554,
+          currency: "jpy",
+          description: "WEB+DB PRESSの購入",
+          card: {
+            number: "4242-4242-4242-4242",
+            exp_month: "11",
+            exp_year: "2014",
+            cvc: "123",
+            name: "KENGO HAMASAKI"
+          }
+        )
+  %p
+    %form{ action: '/purchase_webdbpress', method: 'post'}
+      %input.btn.btn-large.btn-success.pull-right{ type: 'submit', value: '実行する'}
+%hr
+.hero-unit
+  %h3
+    Customerを作成する
+  %pre
+    %code
+      :preserve
+        Stripe::Customer.create(
+          email: 'hmsk@webpay.jp',
+          description: "はまさき",
+          card: {
+            number: "4242-4242-4242-4242",
+            exp_month: "11",
+            exp_year: "2014",
+            cvc: "123",
+            name: "KENGO HAMASAKI"
+          }
+        )
+  %p
+    %form{ action: '/create_customer', method: 'post'}
+      %input.btn.btn-large.btn-success.pull-right{ type: 'submit', value: '実行する'}
+
+%hr
+.hero-unit
+  %h3
+    顧客情報に対してChargeを作成する
+  %pre
+    %code
+      :preserve
+        Stripe::Charge.create(
+          amount: 1554,
+          currency: "jpy",
+          description: "WEB+DB PRESSの購入",
+          customer: "#{@customer.id}"
+        )
+  %p
+    %form{ action: '/purchase_webdbpress_with_customer', method: 'post'}
+      %input{ type: 'hidden', value: @customer.id, name: 'customer'}
+      %input.btn.btn-large.btn-success.pull-right{ type: 'submit', value: '実行する'}
+%hr
+.hero-unit
+  %h3
+    リスト1:
+    %br
+    カード情報をトークン化して送信するフォームのサンプル
+  %a.btn.btn-large.btn-info.pull-right{ href: '/token_form'}
+    フォームへ

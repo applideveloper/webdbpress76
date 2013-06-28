@@ -1,0 +1,23 @@
+.hero-unit
+  %h3
+    Chargeを作成しました
+  .row
+    .span9
+      %table.table.table-striped.table-hover.table-bordered
+        %tr
+          %td ユニークキー
+          %td= @charge.id
+        %tr
+          %td 金額
+          %td= "#{@charge.amount} 円"
+        %tr
+          %td 詳細
+          %td= @charge.description
+        %tr
+          %td カード番号（下四桁）
+          %td= @charge.card.last4
+        %tr
+          %td 顧客のユニークキー
+          %td= @charge.customer || 'なし'
+  %a.btn.btn-large.pull-right{ href: '/'}
+    戻る

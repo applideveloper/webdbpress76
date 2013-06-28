@@ -1,0 +1,71 @@
+<html>
+  <head>
+    <meta charset=utf-8 />
+    <title>WebPayを利用したフォームのサンプル</title>
+  </head>
+
+  <script src="http://code.jquery.com/jquery.min.js"></script>
+  <script type="text/javascript" src="https://js.webpay.jp/v1/"></script>
+  <script type="text/javascript">
+    WebPay.setPublishableKey('test_public_62W08o3YN0mj5T88953A34mZ');
+    var webpayResponseHandler = function(status, response) {
+      var $form = $("#payment-form");
+      if (response.error) {
+        // 必要に応じてエラー処理を入れてください
+        $form.find('button').prop('disabled', false);
+        console.log(response);
+      } else {
+        // 伝送させたくない情報をフォームから削除する
+        $(".card-number").removeAttr("name");
+        $(".card-cvc").removeAttr("name");
+        $(".card-expiry-year").removeAttr("name");
+
+        var token = response.id;
+        $form.append("<input type='hidden' name='token' value='" + token + "'/>");
+        $form.get(0).submit();
+      }
+    };
+
+    jQuery(function($) {
+      $('#payment-form').submit(function(e) {
+        var $form = $(this);
+        $form.find('button').prop('disabled', true);
+        WebPay.createToken({
+          number: $form.find(".card-number").val(),
+          name: $form.find(".card-name").val(),
+          cvc: $form.find(".card-cvc").val(),
+          exp_month: $form.find(".expiry-month").val(),
+          exp_year: "20" + $form.find(".expiry-year").val()
+        }, webpayResponseHandler);
+
+        e.preventDefault();
+      });
+    });
+  </script>
+
+  <form action="/purchase_webdbpress_with_token" method="post" id="payment-form">
+    <p>
+      <label>カード番号</label>
+      <input type="text" class="card-number" maxlength=20 value="5555-5555-5555-4444" />
+    </p>
+    <p>
+      <label>名義</label>
+      <input type="text" class="card-name" maxlength=20 value="KENGO HAMASAKI" />
+    </p>
+    <p>
+      <label>有効期限</label>
+      <input type="text" class="expiry-month" maxlength=2 size=2 placeholder="月" value="8" />
+      /
+      <input type="text" class="expiry-year" maxlength=2 size= 2 placeholder="年" value="14" />
+    <p>
+      <label>CVC</label>
+      <input type="text" class="card-cvc" maxlength=4 size=4 />
+    </p>
+    <p>
+      <button type="submit" name="submit-button">送信</button>
+    </p>
+    <span class="payment-errors"></span>
+  </form>
+
+  </body>
+</html>

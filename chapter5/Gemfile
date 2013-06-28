@@ -1,0 +1,9 @@
+source 'https://rubygems.org'
+
+gem 'haml'
+gem 'rake'
+
+gem 'sinatra'
+gem 'stripe'
+
+ruby '2.0.0'
