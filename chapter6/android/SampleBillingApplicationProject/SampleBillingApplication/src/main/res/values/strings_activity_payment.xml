@@ -1,0 +1,8 @@
+<resources>
+    
+    <string name="purchase_message">以下のボタンを押した後に決済方法を選択したのちに、実際に支払いが行われてしまうためご注意ください</string>
+    <string name="purchase_consumable">管理対象外の商品を購入</string>
+    <string name="purchase_subscription">定期購入を開始</string>
+    <string name="cancel_subscription">定期購入を終了</string>
+
+</resources>

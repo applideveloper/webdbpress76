@@ -1,0 +1,51 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".PaymentActivity">
+
+    <ScrollView
+        android:id="@+id/login_form"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:padding="12dp"
+                android:textSize="16sp"
+                android:text="@string/purchase_message"
+                    />
+
+            <Button android:id="@+id/purchase_cosumable"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/purchase_consumable"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp" />
+
+            <Button android:id="@+id/purchase_subscription"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/purchase_subscription"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp" />
+
+            <Button android:id="@+id/cancel_subscription"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="48dp"
+                    android:text="@string/cancel_subscription"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp" />
+        </LinearLayout>
+
+    </ScrollView>
+</merge>

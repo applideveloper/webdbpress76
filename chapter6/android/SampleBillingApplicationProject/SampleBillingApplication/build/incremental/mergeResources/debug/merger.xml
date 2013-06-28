@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger>
+
+    <dataSet config="main" >
+        <source path="/Users/hmsk/Projects/SampleBillingApplicationProject/SampleBillingApplication/src/main/res" >
+            <file
+                name="ic_launcher"
+                path="/Users/hmsk/Projects/SampleBillingApplicationProject/SampleBillingApplication/src/main/res/drawable-hdpi/ic_launcher.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="/Users/hmsk/Projects/SampleBillingApplicationProject/SampleBillingApplication/src/main/res/drawable-mdpi/ic_launcher.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="/Users/hmsk/Projects/SampleBillingApplicationProject/SampleBillingApplication/src/main/res/drawable-xhdpi/ic_launcher.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="/Users/hmsk/Projects/SampleBillingApplicationProject/SampleBillingApplication/src/main/res/drawable-xxhdpi/ic_launcher.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="activity_payment"
+                path="/Users/hmsk/Projects/SampleBillingApplicationProject/SampleBillingApplication/src/main/res/layout/activity_payment.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                path="/Users/hmsk/Projects/SampleBillingApplicationProject/SampleBillingApplication/src/main/res/values/strings.xml"
+                qualifiers="" >
+                <string name="app_name" >SampleBillingApplication
+                </string>
+            </file>
+            <file
+                path="/Users/hmsk/Projects/SampleBillingApplicationProject/SampleBillingApplication/src/main/res/values/strings_activity_payment.xml"
+                qualifiers="" >
+                <string name="purchase_consumable" >管理対象外の商品を購入
+                </string>
+                <string name="cancel_subscription" >定期購入を終了
+                </string>
+                <string name="purchase_message" >以下のボタンを押した後に決済方法を選択したのちに、実際に支払いが行われてしまうためご注意ください
+                </string>
+                <string name="purchase_subscription" >定期購入を開始
+                </string>
+            </file>
+            <file
+                path="/Users/hmsk/Projects/SampleBillingApplicationProject/SampleBillingApplication/src/main/res/values/styles.xml"
+                qualifiers="" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Light" >
+                </style>
+
+                <style
+                    name="AppTheme"
+                    parent="AppBaseTheme" >
+                </style>
+            </file>
+            <file
+                path="/Users/hmsk/Projects/SampleBillingApplicationProject/SampleBillingApplication/src/main/res/values-large/styles.xml"
+                qualifiers="large" >
+
+                <style name="LoginFormContainer" >
+                    <item name="android:layout_width">
+400dp
+                    </item>
+                    <item name="android:layout_height">
+wrap_content
+                    </item>
+                    <item name="android:layout_gravity">
+center
+                    </item>
+                    <item name="android:padding">
+16dp
+                    </item>
+                </style>
+            </file>
+            <file
+                path="/Users/hmsk/Projects/SampleBillingApplicationProject/SampleBillingApplication/src/main/res/values-v11/styles.xml"
+                qualifiers="v11" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Holo.Light" >
+
+                    <!-- API 11 theme customizations can go here. -->
+                </style>
+            </file>
+            <file
+                path="/Users/hmsk/Projects/SampleBillingApplicationProject/SampleBillingApplication/src/main/res/values-v14/styles.xml"
+                qualifiers="v14" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Holo.Light.DarkActionBar" >
+
+                    <!-- API 14 theme customizations can go here. -->
+                </style>
+            </file>
+        </source>
+        <source path="/Users/hmsk/Projects/SampleBillingApplicationProject/SampleBillingApplication/build/res/rs/debug" />
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="/Users/hmsk/Projects/SampleBillingApplicationProject/SampleBillingApplication/src/debug/res" />
+    </dataSet>
+
+</merger>
