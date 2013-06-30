@@ -5,6 +5,7 @@ GEM
     eventmachine (1.0.3)
     haml (4.0.3)
       tilt
+    json (1.7.7)
     mime-types (1.23)
     multi_json (1.7.7)
     rack (1.5.2)
@@ -31,6 +32,7 @@ PLATFORMS
 
 DEPENDENCIES
   haml
+  json
   rake
   sinatra
   stripe

@@ -75,11 +75,11 @@ module Chapter5
 
     # リスト2 WebHooksのリクエストを受け取るエンドポイント例
     post '/webpay-webhooks' do
-      data = JSON.parse request.body.read, symbolize_names: true
+      data = JSON.parse(request.body.read, symbolize_names: true)
       # イベントのIDから詳細情報を取得する
       event = Stripe::Event.retrieve(data[:id])
       if event.type == 'charge.succeeded'
-        if data.paid #=> 支払い完了したかどうか
+        if data.object.paid #=> 支払い完了したかどうか
           # メールで支払いの完了を通知する処理をここで行う
         else
           # 支払いに失敗した場合の処理をここで行う
