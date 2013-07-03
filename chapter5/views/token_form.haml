@@ -1,0 +1,31 @@
+%script{ src: '//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js'}
+%script{ src: '//js.webpay.jp/v1/'}
+%script{ src: '/js/list1.js'}
+.hero-unit
+  %h3
+    JavaScriptでTokenを作成してフォームを送信する
+  .row
+    .span9
+      %form.form-horizontal#payment-form{ action: '/purchase_webdbpress_with_token', method: 'post' }
+        .control-group
+          %label.control-label カード番号
+          .controls
+            %input.card-number{ type: 'text', maxlength: 20, value: '5555-5555-5555-4444' }
+        .control-group
+          %label.control-label 名義
+          .controls
+            %input.card-name{ type: 'text', maxlength: 20, value: 'KENGO HAMASAKI' }
+        .control-group
+          %label.control-label 有効期限
+          .controls
+            %input.input-small.expiry-month{ type: 'text', maxlength: 2, size: 2, value: '8' }
+            月/
+            %input.input-small.expiry-year{ type: 'text', maxlength: 2, size: 2, value: '14' }
+            年
+        .control-group
+          %label.control-label CVC
+          .controls
+            %input.input-small.card-cvc{ type: 'text', maxlength: 4, size: 4 }
+        .control-group
+          .controls
+            %button.btn-info.btn{ type: 'submit', name: 'submit-button' } 送信する

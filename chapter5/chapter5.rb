@@ -59,7 +59,7 @@ module Chapter5
 
     get '/token_form' do
       @title = 'リスト1 JavaScriptでTokenを作成して送信するフォーム'
-      erb :list1
+      haml :token_form
     end
 
     post '/purchase_webdbpress_with_token' do
