@@ -13,9 +13,12 @@ var webpayResponseHandler = function(status, response) {
     $(".card-expiry-year").removeAttr("name");
 
     var token = response.id;
-    form.append(
-      "<input type='hidden' name='token' value='" + token + "'/>"
-    );
+
+    var input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = 'token';
+    input.value = token;
+    $(input).appendTo(form);
     form.get(0).submit();
   }
 };
