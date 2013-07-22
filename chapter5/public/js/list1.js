@@ -1,10 +1,10 @@
 WebPay.setPublishableKey(
-    'test_public_62W08o3YN0mj5T88953A34mZ');
+    "test_public_62W08o3YN0mj5T88953A34mZ");
 var webpayResponseHandler = function(status, response) {
   var form = $("#payment-form");
   if (response.error) {
     // 必要に応じてエラー処理を入れてください
-    form.find('button').prop('disabled', false);
+    form.find("button").prop("disabled", false);
     console.log(response);
   } else {
     // 伝送させたくない情報をフォームから削除する
@@ -14,9 +14,9 @@ var webpayResponseHandler = function(status, response) {
 
     var token = response.id;
 
-    var input = document.createElement('input');
-    input.type = 'hidden';
-    input.name = 'token';
+    var input = document.createElement("input");
+    input.type = "hidden";
+    input.name = "token";
     input.value = token;
     $(input).appendTo(form);
     form.get(0).submit();
@@ -24,9 +24,9 @@ var webpayResponseHandler = function(status, response) {
 };
 
 jQuery(function($) {
-  $('#payment-form').submit(function(e) {
+  $("#payment-form").submit(function(e) {
     var form = $(this);
-    form.find('button').prop('disabled', true);
+    form.find("button").prop("disabled", true);
     WebPay.createToken({
       number: form.find(".card-number").val(),
       name: form.find(".card-name").val(),
